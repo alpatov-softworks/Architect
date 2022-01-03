@@ -4,7 +4,14 @@
 
 DWORD WINAPI InitCheat(HMODULE hModule)
 {
+    Hooks::Attach();
 
+    while (!GetAsyncKeyState(VK_END))
+    {
+        Sleep(100);
+    }
+    Hooks::Detach();
+    Hooks::pOverlay->Detach();
     FreeLibraryAndExitThread(hModule, 0);
 }
 

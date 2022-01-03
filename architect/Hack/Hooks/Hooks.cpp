@@ -18,7 +18,11 @@ void Hooks::Detach()
 }
 HRESULT __fastcall Hooks::hPresent(IDXGISwapChain* pChain, UINT SyncInterval, UINT Flags)
 {
-
+    // init Overlay if function detour was called first time
+    if (pOverlay == nullptr)
+    {
+        pOverlay = new COverlay(pChain);
+    }
     typedef HRESULT(__fastcall* tPresent)(IDXGISwapChain*, UINT, UINT);
     return reinterpret_cast<tPresent>(Hooks::originalPresentAddr)(pChain, SyncInterval, Flags);
 
