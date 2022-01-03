@@ -166,6 +166,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Hack\Hooks\Hooks.cpp" />
+    <ClCompile Include="imgui\architect\ArchitectImGuiDrawList.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />
@@ -175,9 +176,11 @@
     <ClCompile Include="imgui\imgui_widgets.cpp" />
     <ClCompile Include="imgui\misc\freetype\imgui_freetype.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu\Overlay.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Hack\Hooks\Hooks.h" />
+    <ClInclude Include="imgui\architect\ArchitectImGuiDrawList.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
     <ClInclude Include="imgui\imgui_impl_dx11.h" />
@@ -188,6 +191,7 @@
     <ClInclude Include="imgui\imstb_truetype.h" />
     <ClInclude Include="imgui\misc\freetype\imgui_freetype.h" />
     <ClInclude Include="imgui\misc\freetype\imstb_rectpack.h" />
+    <ClInclude Include="Menu\Overlay.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
