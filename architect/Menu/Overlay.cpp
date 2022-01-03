@@ -19,7 +19,7 @@ COverlay::COverlay(IDXGISwapChain* pSwapChain)
 	// Changing font to normal
 	ImFontConfig cfg;
 	cfg.FontBuilderFlags |= ImGuiFreeTypeBuilderFlags_Monochrome;
-	imguiIO.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\Verdana.ttf", 13.0f, &cfg);
+	imguiIO.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\Verdana.ttf", 15.0f, &cfg);
 
 }
 void COverlay::Render()
@@ -30,15 +30,18 @@ void COverlay::Render()
 
 
 	auto drawer =  CEspDrawer();
-	auto draw_list = ImGui::GetBackgroundDrawList();
+	auto draw_list = (CArchitectImGuiCustomDrawList*)ImGui::GetBackgroundDrawList();
 	for (auto ent : GEnityList::list)
 	{
 		auto pos = drawer.WorldToScreen(ent->m_vecOrigin);
 		if (pos.z > 0 and ent->m_iHealth > 0)
 		{
-			draw_list->AddLine(ImVec2(1920 / 2, 1080), pos, ImColor(255, 255, 255), 2);
+
+			drawer.DrawBox(ent, ImColor(255, 255, 255), draw_list);
+
 		}
 	}
+	draw_list->AddOutlinedText(ImVec2(), ImColor(255, 255, 255), "ARCHITECT BY LSS");
 
 	ImGui::EndFrame();
 	ImGui::Render();
