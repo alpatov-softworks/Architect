@@ -34,6 +34,24 @@
     <Filter Include="imgui\architect">
       <UniqueIdentifier>{ac6b553c-83b9-4f46-904d-45be31f29369}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Hack\ESP">
+      <UniqueIdentifier>{ae4941df-a60a-4351-93ef-8f8bc5f50b5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ASDK">
+      <UniqueIdentifier>{bd80542b-4d1f-4566-9466-b4b908352252}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ASDK\CBaseEntity">
+      <UniqueIdentifier>{34dd34d5-2987-4cbd-b185-86e342e365ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{13bd1705-7d13-4b83-bbc6-b47760d18a18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Threads">
+      <UniqueIdentifier>{7b15786c-53c1-4fce-be40-db503c85cddc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Globals">
+      <UniqueIdentifier>{9326dfca-08ca-4995-8a2a-ec7da1008a08}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -71,6 +89,15 @@
     </ClCompile>
     <ClCompile Include="imgui\architect\ArchitectImGuiDrawList.cpp">
       <Filter>imgui\architect</Filter>
+    </ClCompile>
+    <ClCompile Include="Hack\ESP\CEspDrawer.cpp">
+      <Filter>Hack\ESP</Filter>
+    </ClCompile>
+    <ClCompile Include="ASDK\CBaseEntity.cpp">
+      <Filter>ASDK\CBaseEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="Threads\Threads.cpp">
+      <Filter>Threads</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +139,30 @@
     </ClInclude>
     <ClInclude Include="imgui\architect\ArchitectImGuiDrawList.h">
       <Filter>imgui\architect</Filter>
+    </ClInclude>
+    <ClInclude Include="Hack\ESP\CEspDrawer.h">
+      <Filter>Hack\ESP</Filter>
+    </ClInclude>
+    <ClInclude Include="ASDK\CBaseEntity.h">
+      <Filter>ASDK\CBaseEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="ASDK\Padding.h">
+      <Filter>ASDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\ImVec3.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Matrix4x4.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ASDK\R5Apex.h">
+      <Filter>ASDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Threads\Threads.h">
+      <Filter>Threads</Filter>
+    </ClInclude>
+    <ClInclude Include="Globals\EntityList.h">
+      <Filter>Globals</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

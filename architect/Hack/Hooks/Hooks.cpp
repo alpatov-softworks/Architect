@@ -23,6 +23,7 @@ HRESULT __fastcall Hooks::hPresent(IDXGISwapChain* pChain, UINT SyncInterval, UI
     {
         pOverlay = new COverlay(pChain);
     }
+    pOverlay->Render();
     typedef HRESULT(__fastcall* tPresent)(IDXGISwapChain*, UINT, UINT);
     return reinterpret_cast<tPresent>(Hooks::originalPresentAddr)(pChain, SyncInterval, Flags);
 

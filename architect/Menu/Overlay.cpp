@@ -28,8 +28,17 @@ void COverlay::Render()
 	ImGui_ImplWin32_NewFrame();
 	ImGui::NewFrame();
 
-	// draw stuff here
-	reinterpret_cast<CArchitectImGuiCustomDrawList*>(ImGui::GetBackgroundDrawList())->AddOutlinedText(ImVec2(), ImColor(255, 255, 255), "Hello world!");
+
+	auto drawer =  CEspDrawer();
+	auto draw_list = ImGui::GetBackgroundDrawList();
+	for (auto ent : GEnityList::list)
+	{
+		auto pos = drawer.WorldToScreen(ent->m_vecOrigin);
+		if (pos.z > 0 and ent->m_iHealth > 0)
+		{
+			draw_list->AddLine(ImVec2(1920 / 2, 1080), pos, ImColor(255, 255, 255), 2);
+		}
+	}
 
 	ImGui::EndFrame();
 	ImGui::Render();

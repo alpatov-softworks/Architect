@@ -165,6 +165,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ASDK\CBaseEntity.cpp" />
+    <ClCompile Include="Hack\ESP\CEspDrawer.cpp" />
     <ClCompile Include="Hack\Hooks\Hooks.cpp" />
     <ClCompile Include="imgui\architect\ArchitectImGuiDrawList.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
@@ -177,8 +179,14 @@
     <ClCompile Include="imgui\misc\freetype\imgui_freetype.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu\Overlay.cpp" />
+    <ClCompile Include="Threads\Threads.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ASDK\CBaseEntity.h" />
+    <ClInclude Include="ASDK\Padding.h" />
+    <ClInclude Include="ASDK\R5Apex.h" />
+    <ClInclude Include="Globals\EntityList.h" />
+    <ClInclude Include="Hack\ESP\CEspDrawer.h" />
     <ClInclude Include="Hack\Hooks\Hooks.h" />
     <ClInclude Include="imgui\architect\ArchitectImGuiDrawList.h" />
     <ClInclude Include="imgui\imconfig.h" />
@@ -192,6 +200,9 @@
     <ClInclude Include="imgui\misc\freetype\imgui_freetype.h" />
     <ClInclude Include="imgui\misc\freetype\imstb_rectpack.h" />
     <ClInclude Include="Menu\Overlay.h" />
+    <ClInclude Include="Threads\Threads.h" />
+    <ClInclude Include="Utils\ImVec3.h" />
+    <ClInclude Include="Utils\Matrix4x4.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

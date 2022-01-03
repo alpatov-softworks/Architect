@@ -6,6 +6,8 @@
 #include "../imgui/imgui_impl_win32.h"
 #include "../imgui/misc/freetype/imgui_freetype.h"
 #include "../imgui/architect/ArchitectImGuiDrawList.h"
+#include "../Hack/ESP/CEspDrawer.h"
+#include "../Globals/EntityList.h"
 
 class COverlay
 {
