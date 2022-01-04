@@ -7,7 +7,8 @@
 #include "../imgui/misc/freetype/imgui_freetype.h"
 #include "../imgui/architect/ArchitectImGuiDrawList.h"
 #include "../Hack/ESP/CEspDrawer.h"
-#include "../Globals/EntityList.h"
+#include "../Globals/GlobalVars.h"
+
 
 class COverlay
 {

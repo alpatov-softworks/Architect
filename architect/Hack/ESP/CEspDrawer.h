@@ -13,8 +13,8 @@ public:
 	CR5Apex* m_iApexModule = NULL;
 	void	DrawBox(CBaseEntity* entity, ImColor col, ImDrawList* pDrawList)
 	{
-        auto top    = WorldToScreen(entity->m_vecOrigin);
-        auto bottom = WorldToScreen(entity->m_vecCameraOrigin + ImVec3(0, 0, 8));
+        auto top     = WorldToScreen(entity->m_vecOrigin);
+        auto bottom  = WorldToScreen(entity->m_vecCameraOrigin + ImVec3(0, 0, 8.4));
         float height = fabsf(top.y - bottom.y);
 
         ImVec3 top_left     = bottom - ImVec3(height / 4.f, 0, 0);

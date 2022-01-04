@@ -52,6 +52,9 @@
     <Filter Include="Globals">
       <UniqueIdentifier>{9326dfca-08ca-4995-8a2a-ec7da1008a08}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Settings">
+      <UniqueIdentifier>{aef795dd-7d34-4855-b85b-6992d56483c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -161,8 +164,14 @@
     <ClInclude Include="Threads\Threads.h">
       <Filter>Threads</Filter>
     </ClInclude>
-    <ClInclude Include="Globals\EntityList.h">
+    <ClInclude Include="Globals\GlobalVars.h">
       <Filter>Globals</Filter>
+    </ClInclude>
+    <ClInclude Include="ASDK\CLocalPlayer.h">
+      <Filter>ASDK\CBaseEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings\Settings.h">
+      <Filter>Settings</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

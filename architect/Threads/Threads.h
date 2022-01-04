@@ -3,7 +3,7 @@
 #include <vector>
 #include "../ASDK/CBaseEntity.h"
 #include "../ASDK/R5Apex.h"
-#include "../Globals/EntityList.h"
+#include "../Globals/GlobalVars.h"
 
 class Threads
 {

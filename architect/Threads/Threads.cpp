@@ -2,7 +2,7 @@
 
 Threads::Threads()
 {
-	this->m_hThreadsHandles.push_back(CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)EntityListUpdateThread,&GEnityList::list,0, nullptr));
+	this->m_hThreadsHandles.push_back(CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)EntityListUpdateThread,&GlobalVars::entityList, 0, nullptr));
 }
 void Threads::KillAll()
 {

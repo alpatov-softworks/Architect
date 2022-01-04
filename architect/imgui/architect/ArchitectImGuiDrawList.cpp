@@ -20,5 +20,13 @@ void CArchitectImGuiCustomDrawList::AddOutlinedText(const ImVec2& position, ImCo
     tempPosition.y = position.y + 1;
     AddText(tempPosition, ImColor(0, 0, 0), text_begin, text_end);
 
+    tempPosition.x = position.x;
+    tempPosition.y = position.y + 1;
+    AddText(tempPosition, ImColor(0, 0, 0), text_begin, text_end);
+
+    tempPosition.x = position.x;
+    tempPosition.y = position.y - 1;
+    AddText(tempPosition, ImColor(0, 0, 0), text_begin, text_end);
+
     AddText(position, col, text_begin, text_end);
 }

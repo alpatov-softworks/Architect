@@ -154,6 +154,9 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -183,9 +186,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ASDK\CBaseEntity.h" />
+    <ClInclude Include="ASDK\CLocalPlayer.h" />
     <ClInclude Include="ASDK\Padding.h" />
     <ClInclude Include="ASDK\R5Apex.h" />
-    <ClInclude Include="Globals\EntityList.h" />
+    <ClInclude Include="Globals\GlobalVars.h" />
     <ClInclude Include="Hack\ESP\CEspDrawer.h" />
     <ClInclude Include="Hack\Hooks\Hooks.h" />
     <ClInclude Include="imgui\architect\ArchitectImGuiDrawList.h" />
@@ -200,6 +204,7 @@
     <ClInclude Include="imgui\misc\freetype\imgui_freetype.h" />
     <ClInclude Include="imgui\misc\freetype\imstb_rectpack.h" />
     <ClInclude Include="Menu\Overlay.h" />
+    <ClInclude Include="Settings\Settings.h" />
     <ClInclude Include="Threads\Threads.h" />
     <ClInclude Include="Utils\ImVec3.h" />
     <ClInclude Include="Utils\Matrix4x4.h" />

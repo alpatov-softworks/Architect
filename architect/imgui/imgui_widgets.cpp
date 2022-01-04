@@ -263,7 +263,42 @@ void ImGui::Text(const char* fmt, ...)
 {
     va_list args;
     va_start(args, fmt);
+    auto cursorPos = ImGui::GetCursorPos();
+    ImVec2 tempPosition;
+
+    tempPosition.x = cursorPos.x + 1;
+    tempPosition.y = cursorPos.y + 1;
+    SetCursorPos(tempPosition);
+    TextColoredV(ImColor(0.f, 0.f, 0.f), fmt, args);
+
+    tempPosition.x = cursorPos.x - 1;
+    tempPosition.y = cursorPos.y - 1;
+    SetCursorPos(tempPosition);
+    TextColoredV(ImColor(0.f, 0.f, 0.f), fmt, args);
+
+    tempPosition.x = cursorPos.x + 1;
+    tempPosition.y = cursorPos.y - 1;
+    SetCursorPos(tempPosition);
+    TextColoredV(ImColor(0.f, 0.f, 0.f), fmt, args);
+
+    tempPosition.x = cursorPos.x - 1;
+    tempPosition.y = cursorPos.y + 1;
+    SetCursorPos(tempPosition);
+    TextColoredV(ImColor(0.f, 0.f, 0.f), fmt, args);
+
+    tempPosition.x = cursorPos.x;
+    tempPosition.y = cursorPos.y + 1;
+    SetCursorPos(tempPosition);
+    TextColoredV(ImColor(0.f, 0.f, 0.f), fmt, args);
+
+    tempPosition.x = cursorPos.x;
+    tempPosition.y = cursorPos.y - 1;
+    SetCursorPos(tempPosition);
+    TextColoredV(ImColor(0.f, 0.f, 0.f), fmt, args);
+
+    SetCursorPos(cursorPos);
     TextV(fmt, args);
+
     va_end(args);
 }
 
@@ -283,6 +318,41 @@ void ImGui::TextColored(const ImVec4& col, const char* fmt, ...)
 {
     va_list args;
     va_start(args, fmt);
+
+    auto cursorPos = ImGui::GetCursorPos();
+    ImVec2 tempPosition;
+
+    tempPosition.x = cursorPos.x + 1;
+    tempPosition.y = cursorPos.y + 1;
+    SetCursorPos(tempPosition);
+    TextColoredV(ImColor(0.f,0.f,0.f), fmt, args);
+
+    tempPosition.x = cursorPos.x - 1;
+    tempPosition.y = cursorPos.y - 1;
+    SetCursorPos(tempPosition);
+    TextColoredV(ImColor(0.f, 0.f, 0.f), fmt, args);
+
+    tempPosition.x = cursorPos.x + 1;
+    tempPosition.y = cursorPos.y - 1;
+    SetCursorPos(tempPosition);
+    TextColoredV(ImColor(0.f, 0.f, 0.f), fmt, args);
+
+    tempPosition.x = cursorPos.x - 1;
+    tempPosition.y = cursorPos.y + 1;
+    SetCursorPos(tempPosition);
+    TextColoredV(ImColor(0.f, 0.f, 0.f), fmt, args);
+
+    tempPosition.x = cursorPos.x;
+    tempPosition.y = cursorPos.y + 1;
+    SetCursorPos(tempPosition);
+    TextColoredV(ImColor(0.f, 0.f, 0.f), fmt, args);
+
+    tempPosition.x = cursorPos.x;
+    tempPosition.y = cursorPos.y - 1;
+    SetCursorPos(tempPosition);
+    TextColoredV(ImColor(0.f, 0.f, 0.f), fmt, args);
+
+    SetCursorPos(cursorPos);
     TextColoredV(col, fmt, args);
     va_end(args);
 }
@@ -5011,7 +5081,7 @@ bool ImGui::ColorEdit4(const char* label, float col[4], ImGuiColorEditFlags flag
         window->DC.CursorPos = ImVec2(pos.x + button_offset_x, pos.y);
 
         const ImVec4 col_v4(col[0], col[1], col[2], alpha ? col[3] : 1.0f);
-        if (ColorButton("##ColorButton", col_v4, flags))
+        if (ColorButton("##ColorButton", static_cast<ImColor>(col_v4).ToSRGB(), flags))
         {
             if (!(flags & ImGuiColorEditFlags_NoPicker))
             {
@@ -5303,12 +5373,12 @@ bool ImGui::ColorPicker4(const char* label, float col[4], ImGuiColorEditFlags fl
             Text("Current");
 
         ImGuiColorEditFlags sub_flags_to_forward = ImGuiColorEditFlags_InputMask_ | ImGuiColorEditFlags_HDR | ImGuiColorEditFlags_AlphaPreview | ImGuiColorEditFlags_AlphaPreviewHalf | ImGuiColorEditFlags_NoTooltip;
-        ColorButton("##current", col_v4, (flags & sub_flags_to_forward), ImVec2(square_sz * 3, square_sz * 2));
+        ColorButton("##current", static_cast<ImColor>(col_v4).ToSRGB(), (flags & sub_flags_to_forward), ImVec2(square_sz * 3, square_sz * 2));
         if (ref_col != NULL)
         {
             Text("Original");
             ImVec4 ref_col_v4(ref_col[0], ref_col[1], ref_col[2], (flags & ImGuiColorEditFlags_NoAlpha) ? 1.0f : ref_col[3]);
-            if (ColorButton("##original", ref_col_v4, (flags & sub_flags_to_forward), ImVec2(square_sz * 3, square_sz * 2)))
+            if (ColorButton("##original", static_cast<ImColor>(ref_col_v4).ToSRGB(), (flags & sub_flags_to_forward), ImVec2(square_sz * 3, square_sz * 2)))
             {
                 memcpy(col, ref_col, components * sizeof(float));
                 value_changed = true;
